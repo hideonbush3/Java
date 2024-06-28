@@ -1,5 +1,8 @@
 package Collection;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
 class Dog implements Comparable<Dog>{
     public String name;
     public int age;
@@ -35,5 +38,39 @@ public class C08Comparable {
         System.out.println(new Integer(10).compareTo(new Integer(10))); // 0
         System.out.println(new Integer(10).compareTo(new Integer(15))); // -1
 
+        CustomInteger[] arr = new CustomInteger[10];
+        for(int i = 0; i < 10; i++){
+            arr[i] = new CustomInteger((int) (Math.random() * 100));
+        }
+
+        Arrays.sort(arr);
+
+        for(CustomInteger ci : arr){
+            System.out.print(ci);
+        }
+
+    }
+}
+
+class CustomInteger implements Comparable<CustomInteger>{
+    int value;
+    
+    CustomInteger(int value){
+        this.value = value;
+    }
+
+    @Override
+    public int compareTo(CustomInteger another){
+        if(this.value > another.value){
+            return 1;
+        }
+        else if(this.value == another.value){
+            return 0;
+        }
+        return -1;
+    }
+
+    public String toString(){
+        return this.value + " ";
     }
 }
