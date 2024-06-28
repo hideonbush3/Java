@@ -1,5 +1,6 @@
 package Collection;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class C09Comparator {
@@ -39,6 +40,19 @@ public class C09Comparator {
 
         System.out.println(ageComp.compare(p1, p2));    // 1  -> p1이 연장자다
         System.out.println(heightComp.compare(p1, p2)); // -1 -> p1이 키는 더 작다
+
+        Person[] arr = new Person[5];
+        int[] ageArr = {80, 30, 20, 50, 40};
+        
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = new Person(ageArr[i], 170);
+        }
+
+        Arrays.sort(arr, ageComp);
+
+        for(Person p : arr){
+            System.out.print(p);
+        }
     }
 }
 
@@ -51,5 +65,9 @@ class Person{
     Person(int age, int height){
         this.age = age;
         this.height = height;
+    }
+
+    public String toString(){
+        return this.age + " ";
     }
 }
