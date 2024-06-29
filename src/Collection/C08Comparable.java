@@ -1,7 +1,6 @@
 package Collection;
 
 import java.util.Arrays;
-import java.util.Iterator;
 
 class Dog implements Comparable<Dog>{
     public String name;
