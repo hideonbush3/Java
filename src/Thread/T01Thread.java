@@ -1,4 +1,5 @@
-public class J03Thread {
+package Thread;
+public class T01Thread {
     // 프로세스내에서 실제로 작업을 하는 주체
     // 자바에서 스레드 생성 방법은 두가지
     // 1. Thread 클래스를 상속
